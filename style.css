@@ -1,0 +1,220 @@
+:root {
+  --color-background: #ffeaef;
+  --color-border: #fdfdfd;
+  --color-playerX: #fdb3e1;
+  --color-playerO: #79defd;
+}
+
+* { 
+  padding: 0; 
+  margin: 0; 
+  font-family: 'Itim', cursive; 
+} 
+
+html{
+  background-color: var(--color-background);
+}
+
+/*Start section */
+
+
+#startPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0px;
+  z-index: 2;
+}
+
+#transitionContainer {
+  position: fixed;
+  background-color: transparent;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+.item {
+  flex: 0 0 calc(33.33% - 20px); /* 3 items per row with margin */
+  height: calc(22.22% - 10px); /* Height of each item */
+  background-color: var(--color-playerO);
+  transition: transform 0.5s;
+}
+
+.slide-out {
+  transform: translateX(-100%);
+}
+/* Tic tac toe Grid */
+
+.title { 
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 5rem;
+  color: #333333;
+} 
+
+.container {
+  margin: 0 auto;
+  border-radius: 25px; 
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100px 100px 100px;
+  max-width: 300px;
+  border: 10px dashed var(--color-border);
+}
+
+.tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e6d8e0;
+  border: 2px dashed var(--color-border);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: relative;
+  background-size: cover;
+}
+
+/* Animation apparition tile*/
+.playerImgX,
+.playerImgO {
+  height: 64px;
+  width: 64px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  font-size: 24px;
+  transform-origin: center;
+  animation: appearAnimation 0.5s ease forwards;
+}
+.playerImgX{
+background: url(/asset/candy.png);
+}
+.playerImgO{
+background: url(/asset/cotton-candy.png);
+}
+
+@keyframes shakeAnimation {
+  0%  { transform: translate(0, 0); }
+  10% { transform: rotate(-2deg); }
+  20% { transform: rotate(2deg); }
+  30% { transform: rotate(-2deg); }
+  40% { transform: rotate(2deg); }
+  50% { transform: rotate(-2deg); }
+  60% { transform: rotate(2deg); }
+  70% { transform: rotate(-2deg); }
+  80% { transform: rotate(2deg); }
+  90% { transform: rotate(-2deg); }
+  100%{ transform:translate(0, 0); }
+}
+
+@keyframes appearAnimation {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.tile.playerX {
+  background: var(--color-playerX);
+}
+
+.tile.playerO {
+  background: var(--color-playerO);
+}
+
+.tile:hover {
+  background-color: var(--color-border);
+}
+
+/* Button */
+
+#reset:hover{
+  animation: shakeAnimation 1s ease ;
+  transform-origin: center;
+}
+
+.controls { 
+  display: flex; 
+  flex-direction: row; 
+  justify-content: center; 
+  align-items: center; 
+  margin-top: 1em; 
+} 
+
+.controls button { 
+  color: white; 
+  padding: 8px; 
+  border-radius: 8px; 
+  border: none; 
+  font-size: 20px; 
+  margin-left: 1em; 
+  cursor: pointer; 
+} 
+
+#reset { 
+  background-image: linear-gradient(to bottom, #498AFB, #a968b9);
+}
+
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none!important
+}
+
+.players-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem;
+}
+
+.avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid white;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.player-name {
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.winCondition.img{
+ background-color: aliceblue;
+ animation: shakeAnimation 1s ease ;
+ transform-origin: center;
+}
+
+/* .resetAnimation{
+
+} */
