@@ -7,7 +7,7 @@ export class Morpion {
     this.board = board;
   } 
 
-  static initCellListeners() {
+  initCellListeners() {
     const boardContainer = document.getElementById('board');
     if (!this.board.gameOver) {
       const clickHandler = (event) => {
@@ -17,8 +17,10 @@ export class Morpion {
           const imgChildDivs = clickedCell.children;
           this.makeMove(clickedCell, imgChildDivs, position);
         }
-      }; 
-      boardContainer.addEventListener('click', clickHandler);
+      };
+  
+    boardContainer.addEventListener('click', clickHandler);
+  
       this.clickHandler = clickHandler;
     }
   }
@@ -52,7 +54,9 @@ export class Morpion {
            alert(`Victoire pour  ${currentPlayerValue}`);
            this.board.gameOver = true; 
            this.removeCellListeners();
-          }      
+          } 
+      
     }      
   }
+
 }

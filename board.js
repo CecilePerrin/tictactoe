@@ -1,5 +1,3 @@
-import { Morpion } from './Morpion.js';  
-
 export class Board{ 
   constructor() { 
     this.grid = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '];
@@ -16,11 +14,11 @@ export class Board{
     this.gameOver = false;
   } 
 
-  updateGrid(position, symbol) {
+   updateGrid(position, symbol) {
     this.grid[position] = symbol;
   }
   
-  winVerify(position){
+   winVerify(position){
   const playerSymbol = this.grid[position];
 
   for (let i = 0; i < this.winConditions.length; i++) {
@@ -36,7 +34,7 @@ export class Board{
 
   return false; 
 }
-resetGrid(){
+ resetGrid(){
   const imgCellsX = document.querySelectorAll('.playerImgX')
   const imgCellsO = document.querySelectorAll('.playerImgO')
   const cells = document.querySelectorAll('.tile');
@@ -56,6 +54,6 @@ resetGrid(){
   for (let i = 0; i < this.grid.length; i++){
   this.grid[i] ='';
  }
- Morpion.initCellListeners();
+ location.reload();
 }
 }
