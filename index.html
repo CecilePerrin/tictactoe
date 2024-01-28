@@ -13,12 +13,14 @@
     <main >  
         <div id="startPage" >
             <div class="startPageCenter">
-                <h1>Tic tac toe Game</h1>
+                <h1 class ="degrade">Tic tac toe Game</h1>
                 <div class="">
-                    <p>Player X </p><input type="text" placeholder="Enter your name">
-                    <p>Player O </p><input type="text" placeholder="Enter your name">
+                    <p>Player X </p><input type="text" id="player-nameX" placeholder="Enter your name">
+                    <p>Player O </p><input type="text" id="player-nameY" placeholder="Enter your name">
                 </div>
-                <button id="startButton" class="controls">Jouer</button>
+                <section class="controls"> 
+                <button id="startButton" >Jouer</button>
+                </section>
             </div>
         </div>       
         <section id="transitionContainer" >
@@ -31,8 +33,18 @@
             <div class="item"></div>
         </section>
         <section class="title"> 
-            <h1>Tic Tac Toe</h1> 
+            <section class="players-section">
+                <div class="bubblegum-title ">        
+                <h1 id="gameTitle" >Au tour de : <p id="playerName"></p></h1 >
+                    <div class="avatar">
+                        <img src="/asset/cotton-candy.png" id="avatarX" alt="Avatar joueur 1">
+                        <img src="/asset/candy.png" id="avatarY" alt="Avatar joueur 2">
+                    </div>
+                </div>    
+            </section> 
+        
         </section> 
+
         <section class="container" id = "board"> 
             <div class="tile" data-position="0"><div></div></div> 
             <div class="tile" data-position="1"><div></div></div> 
@@ -48,16 +60,6 @@
         <section class="controls"> 
             <button id="reset">Restart</button> 
         </section>
-        <section class="players-section">
-            <div class="player">
-                <div class="avatar">
-                    <img src="/asset/cotton-candy.png" alt="Avatar joueur 1">
-                </div>
-                <div class="player-name">
-                    <span id ="display-player"></span>
-                </div>
-            </div>       
-        </section> 
     </main> 
 </body> 
 </html> 

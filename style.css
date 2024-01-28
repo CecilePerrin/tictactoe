@@ -1,5 +1,5 @@
 :root {
-  --color-background: #ffeaef;
+  --color-background: #ff97af;
   --color-border: #fdfdfd;
   --color-playerX: #fdb3e1;
   --color-playerO: #79defd;
@@ -17,13 +17,17 @@ html{
 
 /*Start section */
 
+html, body, #startPage {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
 
 #startPage {
   display: flex;
   align-items: center;
   justify-content: center;
   position: fixed;
-  height: 100%;
   width: 100%;
   left: 0;
   top: 0px;
@@ -31,7 +35,6 @@ html{
 }
 
 #transitionContainer {
-  position: fixed;
   background-color: transparent;
   width: 100vw;
   height: 100vh;
@@ -139,6 +142,9 @@ background: url(/asset/cotton-candy.png);
 
 /* Button */
 
+#reset { 
+  background-image: linear-gradient(to bottom, #498AFB, #a968b9);
+}
 #reset:hover{
   animation: shakeAnimation 1s ease ;
   transform-origin: center;
@@ -161,10 +167,6 @@ background: url(/asset/cotton-candy.png);
   margin-left: 1em; 
   cursor: pointer; 
 } 
-
-#reset { 
-  background-image: linear-gradient(to bottom, #498AFB, #a968b9);
-}
 
 .visible {
   display: block;
@@ -189,20 +191,6 @@ background: url(/asset/cotton-candy.png);
   margin: 3rem;
 }
 
-.avatar {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 5px solid white;
-}
-
-.avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .player-name {
   margin-top: 10px;
   font-weight: bold;
@@ -218,3 +206,98 @@ background: url(/asset/cotton-candy.png);
 /* .resetAnimation{
 
 } */
+
+/* Style des champs de saisie */
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #ff6b6b;
+  box-shadow: 2px 2px 5px rgba(255, 44, 185, 0.5);
+}
+
+/* Espacement pour les titres */
+p {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+#startButton { 
+  background-image: linear-gradient(to bottom, #498AFB, #a968b9);
+}
+#startButton:hover{
+  animation: shakeAnimation 1s ease ;
+  transform-origin: center;
+}
+/* */
+.bubblegum-title h1{
+  font-family: 'Arial', sans-serif;
+}
+
+.bubblegum-title:hover {
+  transform: scale(1.1); /* Animation de mise à l'échelle au survol */
+}
+
+
+.bubblegum-title {
+	width: 350px; height: 120px;
+	background: #f2f9fe;
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+  animation: float 3s infinite;
+	position: relative;
+	margin: 120px auto 20px;
+}
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+.bubblegum-title:after, .bubblegum-title:before {
+	content: '';
+	position: absolute;
+  animation: float 3s infinite;
+	background: #f2f9fe;
+	z-index: -1
+  
+}
+
+.bubblegum-title:after {
+	width: 100px; height: 100px;
+	top: -50px; left: 50px;
+  animation: float 3s infinite;
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+}
+
+.bubblegum-title:before {
+	width: 180px; height: 180px;
+	top: -90px; right: 50px;
+  animation: float 3s infinite;
+	border-radius: 200px;
+	-webkit-border-radius: 200px;
+	-moz-border-radius: 200px;
+}
+.degrade{
+  margin-top: 10px;
+  margin-bottom: 5px;
+  background: linear-gradient(90deg, #ff6b6b, #b978e4, #48aff0);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: bold;
+}
