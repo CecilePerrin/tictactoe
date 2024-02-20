@@ -11,6 +11,7 @@ const startPage = document.getElementById('startPage');
 const items = document.querySelectorAll('.item');  
 const playerYName = document.getElementById('player-nameY')
 const playerXName = document.getElementById('player-nameX')
+const mainContainer = document.getElementById('mainContainer')
 const symbolX = document.getElementById('avatarX'); 
 const symbolY = document.getElementById('avatarY'); 
 const setNameItem = document.getElementById('display-player')
@@ -37,7 +38,8 @@ startButton.addEventListener('click', () => {
       item.classList.add('slide-out');  
     }, index * 150); // Delay each item's animation by 200ms  
   });  
-   setTimeout(() => {  
+   setTimeout(() => {
+    mainContainer.classList.remove('hidden');
     transitionContainer.classList.add('hidden');  
   }, items.length * 150);  
 

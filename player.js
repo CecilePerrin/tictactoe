@@ -16,10 +16,10 @@ export class Player{
 
     }else{
       localStorage.setItem('Player X',this.valueName.value)
-
     }
     
   }
+
 
   getPlayerName(){
 
